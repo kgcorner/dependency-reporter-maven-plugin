@@ -8,6 +8,31 @@
     <artifactId>maven-dependency-reporter-plugin</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
+    <name>Maven dependency reporter plugin</name>
+    <description>Maven dependency Reporter plugin creates dependency map of all modules of given maven project</description>
+    <url>https://github.com/kgcorner/maven-dependency-reporter-plugin</url>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Kumar Gaurav</name>
+            <email>kumargauravgupta3@gmail.com</email>
+            <organization>kgcorner</organization>
+            <organizationUrl>https://www.kgcorner.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/kgcorner/maven-dependency-reporter-plugin.git</connection>
+        <developerConnection>scm:git:ssh://github.com:kgcorner/maven-dependency-reporter-plugin.git</developerConnection>
+        <url>https://github.com/kgcorner/maven-dependency-reporter-plugin/tree/master</url>
+    </scm>
+
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -53,6 +78,19 @@
             </plugins>
         </pluginManagement>
     </build>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>sonatype-nexus-staging</id>
+            <name>Nexus Release Repository</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+    </distributionManagement>
 
 
 </project>
