@@ -31,19 +31,23 @@ public class DependencyReporterMojo extends AbstractMojo {
     private static final String CSV_FILE = "report.csv";
     private static final String JSON_FILE = "report.json";
     private static final String D3_FILE = "report.html";
+    public static final String CSV = "csv";
+    public static final String JSON = "json";
+    public static final String HTML = "html";
 
     @Parameter(defaultValue = "${project}", required = true, readonly = true)
     MavenProject project;
 
-    @Parameter(property = "format", defaultValue = "csv")
+    @Parameter(property = "format", defaultValue = CSV)
     String format;
 
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
         List<DependencyArtifact> dependencies = new ArrayList<>();
+        String projectName = project.getArtifact().getArtifactId();
         List<MavenProject> projects = project.getCollectedProjects();
-        if(!format.equalsIgnoreCase("csv") && !format.equalsIgnoreCase("json") && !format.equalsIgnoreCase("d3"))
+        if(!format.equalsIgnoreCase(CSV) && !format.equalsIgnoreCase(JSON) && !format.equalsIgnoreCase(HTML))
             throw new IllegalArgumentException("Format can be either csv or json");
         if(format.equalsIgnoreCase("csv")) {
             for (MavenProject project : projects) {
@@ -54,6 +58,8 @@ public class DependencyReporterMojo extends AbstractMojo {
                     dep.setProjectVersion(project.getVersion());
                     dep.setDependency(dependency.getArtifactId());
                     dep.setDependencyVersion(dependency.getVersion());
+                    dep.setProjectGroupId(project.getGroupId());
+                    dep.setDependencyGroupId(dependency.getGroupId());
                     dependencies.add(dep);
                 }
             }
@@ -64,13 +70,31 @@ public class DependencyReporterMojo extends AbstractMojo {
                 dep.setProject(project.getArtifactId());
                 dep.setProjectVersion(project.getVersion());
                 dep.setDependencies(new ArrayList<>());
+                dep.setProjectGroupId(project.getGroupId());
                 for (Dependency dependency : dependencyList) {
                     DependencyDetails details = new DependencyDetails();
                     details.setDependency(dependency.getArtifactId());
                     details.setDependencyVersion(dependency.getVersion());
+                    details.setDependencyGroupId(dependency.getGroupId());
                     dep.getDependencies().add(details);
                 }
                 dependencies.add(dep);
+            }
+
+            for(DependencyArtifact artifact : dependencies) {
+                artifact.setDependents(new ArrayList<>());
+                for (DependencyArtifact dependentArtifacts : dependencies) {
+                    for(DependencyDetails details : dependentArtifacts.getDependencies()) {
+                        if(details.getDependency().equals(artifact.getProject())) {
+                            DependencyDetails obj = new DependencyDetails();
+                            obj.setDependency(dependentArtifacts.getProject());
+                            obj.setDependencyVersion(dependentArtifacts.getProjectVersion());
+                            obj.setDependencyGroupId(dependentArtifacts.getProjectGroupId());
+                            artifact.getDependents().add(obj);
+                            break;
+                        }
+                    }
+                }
             }
         }
 
@@ -81,14 +105,14 @@ public class DependencyReporterMojo extends AbstractMojo {
             file.mkdirs();
         }
         String outputFile = "";
-        if(format.equalsIgnoreCase("csv"))
+        if(format.equalsIgnoreCase(CSV))
             outputFile = outputDirectory + File.separator + CSV_FILE;
-        if(format.equalsIgnoreCase("json"))
+        if(format.equalsIgnoreCase(JSON))
             outputFile = outputDirectory + File.separator + JSON_FILE;
-        if(format.equalsIgnoreCase("d3"))
+        if(format.equalsIgnoreCase(HTML))
             outputFile = outputDirectory + File.separator + D3_FILE;
         try {
-            Utilities.write(dependencies, outputFile, format);
+            Utilities.write(dependencies, outputFile, format, projectName);
         } catch (IOException e) {
             getLog().error(e);
         }
