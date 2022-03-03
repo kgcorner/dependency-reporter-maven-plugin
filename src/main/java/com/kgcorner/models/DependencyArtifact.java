@@ -15,8 +15,11 @@ public class DependencyArtifact {
     private String projectVersion;
     private String dependency;
     private String dependencyVersion;
+    private String projectGroupId;
+    private String dependencyGroupId;
 
     private List<DependencyDetails> dependencies;
+    private List<DependencyDetails> dependents;
 
 
     public String getProject() {
@@ -70,5 +73,29 @@ public class DependencyArtifact {
     @Override
     public int hashCode() {
         return Objects.hash(project);
+    }
+
+    public List<DependencyDetails> getDependents() {
+        return dependents;
+    }
+
+    public void setDependents(List<DependencyDetails> dependents) {
+        this.dependents = dependents;
+    }
+
+    public String getProjectGroupId() {
+        return projectGroupId;
+    }
+
+    public void setProjectGroupId(String projectGroupId) {
+        this.projectGroupId = projectGroupId;
+    }
+
+    public String getDependencyGroupId() {
+        return dependencyGroupId;
+    }
+
+    public void setDependencyGroupId(String dependencyGroupId) {
+        this.dependencyGroupId = dependencyGroupId;
     }
 }

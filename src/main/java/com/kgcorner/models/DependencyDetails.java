@@ -10,6 +10,7 @@ package com.kgcorner.models;
 public class DependencyDetails {
     private String dependency;
     private String dependencyVersion;
+    private String dependencyGroupId;
 
     public String getDependency() {
         return dependency;
@@ -25,5 +26,13 @@ public class DependencyDetails {
 
     public void setDependencyVersion(String dependencyVersion) {
         this.dependencyVersion = dependencyVersion;
+    }
+
+    public String getDependencyGroupId() {
+        return dependencyGroupId;
+    }
+
+    public void setDependencyGroupId(String dependencyGroupId) {
+        this.dependencyGroupId = dependencyGroupId;
     }
 }
