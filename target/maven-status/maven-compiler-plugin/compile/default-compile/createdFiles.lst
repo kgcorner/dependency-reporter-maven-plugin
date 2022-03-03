@@ -1,6 +1,0 @@
-com/kgcorner/util/Utilities.class
-com/kgcorner/models/DependencyArtifact.class
-com/kgcorner/models/Link.class
-com/kgcorner/models/D3CompatibleNodes.class
-com/kgcorner/models/DependencyDetails.class
-com/kgcorner/mojos/DependencyReporterMojo.class
