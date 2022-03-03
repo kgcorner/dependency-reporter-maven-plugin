@@ -1,0 +1,6 @@
+/work/open-source/dependency-reporter-maven-plugin/src/main/java/com/kgcorner/models/Link.java
+/work/open-source/dependency-reporter-maven-plugin/src/main/java/com/kgcorner/mojos/DependencyReporterMojo.java
+/work/open-source/dependency-reporter-maven-plugin/src/main/java/com/kgcorner/models/DependencyArtifact.java
+/work/open-source/dependency-reporter-maven-plugin/src/main/java/com/kgcorner/models/DependencyDetails.java
+/work/open-source/dependency-reporter-maven-plugin/src/main/java/com/kgcorner/models/D3CompatibleNodes.java
+/work/open-source/dependency-reporter-maven-plugin/src/main/java/com/kgcorner/util/Utilities.java
