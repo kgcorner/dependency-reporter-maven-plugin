@@ -6,7 +6,7 @@ It exports dependency data in three formats
 * JSON
 * HTML
 
-##How To Use
+#How To Use
 
 In your pom.xml add this plugin as given below
 ```
@@ -28,7 +28,7 @@ Run below command to generate report
 ```
 The report will be generated inside directory named `dependency-report` inside target folder.
 
-##Visual Dependency Report
+#Visual Dependency Report
 
 To get visual dependency report use html. Below is one such sample report
 
