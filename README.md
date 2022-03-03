@@ -6,7 +6,7 @@ It exports dependency data in three formats
 * JSON
 * HTML
 
-#How To Use
+## How To Use
 
 In your pom.xml add this plugin as given below
 ```
@@ -28,7 +28,7 @@ Run below command to generate report
 ```
 The report will be generated inside directory named `dependency-report` inside target folder.
 
-#Visual Dependency Report
+## Visual Dependency Report
 
 To get visual dependency report use html. Below is one such sample report
 
@@ -37,7 +37,7 @@ To get visual dependency report use html. Below is one such sample report
 Each node represents a module in your project. Use search box to filter project using a particular dependency.
 
 
-##Use case
+## Use case
 Few days ago we were introduced with a 0 day vulnerability of log4j. Imagine your project have 100s of submodules, 
 nested inside multiple module. In such cases it is very tedious and time taking job to check dependency of each module.
 Here maven dependency reporter plugin can help you. 
