@@ -1,4 +1,7 @@
 # maven-dependency-reporter-plugin
+<img src="https://app.travis-ci.com/kgcorner/maven-dependency-reporter-plugin.svg?branch=master" /> 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.kgcorner/dependency-reporter-maven-plugin/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/com.kgcorner/dependency-reporter-maven-plugin)
+
 Maven dependency Reporter plugin creates dependency map of all modules of given maven project
 
 It exports dependency data in three formats
@@ -44,8 +47,3 @@ Here maven dependency reporter plugin can help you.
 
 Just add the plugin on master module and run. It will create a directory named `dependency-report` and will put the report there.
 Using search box, you can easily see modules that are using log4j(for example). 
-
-
->Note: I am yet to publish this plugin to maven repository. So until then please use it by cloning the repo and build locally.
-
- 
