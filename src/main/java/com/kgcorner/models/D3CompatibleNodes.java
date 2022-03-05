@@ -4,7 +4,7 @@ package com.kgcorner.models;
 import java.util.List;
 
 /**
- * Description : <Write class Description>
+ * Description : Model that defines property for model used by D3.js
  * Author: kumar
  * Created on : 03/03/22
  */

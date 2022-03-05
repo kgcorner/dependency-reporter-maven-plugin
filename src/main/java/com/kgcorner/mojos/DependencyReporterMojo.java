@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Description : <Write class Description>
+ * Description : Mojo for preparing report
  * Author: kumar
  * Created on : 03/03/22
  */

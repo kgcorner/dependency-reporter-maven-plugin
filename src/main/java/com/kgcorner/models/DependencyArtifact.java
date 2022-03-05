@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Description : <Write class Description>
+ * Description : Model for Project and corresponding Dependency Artifact
  * Author: kumar
  * Created on : 03/03/22
  */

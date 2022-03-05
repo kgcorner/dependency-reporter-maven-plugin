@@ -2,7 +2,7 @@ package com.kgcorner.models;
 
 
 /**
- * Description : <Write class Description>
+ * Description : Separate model for details of dependency
  * Author: kumar
  * Created on : 03/03/22
  */

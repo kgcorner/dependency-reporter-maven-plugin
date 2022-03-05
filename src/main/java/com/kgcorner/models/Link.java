@@ -2,7 +2,7 @@ package com.kgcorner.models;
 
 
 /**
- * Description : <Write class Description>
+ * Description : Link model for D3.js
  * Author: kumar
  * Created on : 03/03/22
  */
