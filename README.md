@@ -1,5 +1,5 @@
 # maven-dependency-reporter-plugin
-<img src="https://app.travis-ci.com/kgcorner/maven-dependency-reporter-plugin.svg?branch=master" /> 
+[![Build Status](https://app.travis-ci.com/kgcorner/dependency-reporter-maven-plugin.svg?branch=master)](https://app.travis-ci.com/kgcorner/dependency-reporter-maven-plugin) 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.kgcorner/dependency-reporter-maven-plugin/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/com.kgcorner/dependency-reporter-maven-plugin)
 
 Maven dependency Reporter plugin creates dependency map of all modules of given maven project
